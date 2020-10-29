@@ -14,7 +14,11 @@
       playsinline
     ></video>
 
-    <canvas ref="pauseFrame" v-show="!shouldScan" class="qrcode-stream-camera"></canvas>
+    <canvas
+      ref="pauseFrame"
+      v-show="!shouldScan"
+      class="qrcode-stream-camera"
+    ></canvas>
 
     <canvas ref="trackingLayer" class="qrcode-stream-overlay"></canvas>
 
@@ -133,7 +137,7 @@ export default {
     this.init();
   },
 
-  beforeDestroy() {
+  beforeUnmount() {
     this.beforeResetCamera();
     this.stopScanning();
     this.destroyed = true;

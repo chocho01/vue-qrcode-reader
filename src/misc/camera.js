@@ -20,7 +20,7 @@ class Camera {
   getCapabilities() {
     const [track] = this.stream.getVideoTracks();
     // Firefox does not yet support getCapabilities as of August 2020
-    return track?.getCapabilities?.() ?? {};
+    return track.getCapabilities() ?? {};
   }
 }
 

@@ -1,6 +1,6 @@
 export const indempotent = action => {
   let called = false;
-  let result = undefined;
+  let result;
 
   return (...args) => {
     if (called) {
